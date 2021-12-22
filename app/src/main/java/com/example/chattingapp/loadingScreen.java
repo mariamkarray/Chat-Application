@@ -17,7 +17,7 @@ public class loadingScreen extends AppCompatActivity {
         setContentView(R.layout.activity_loading_screen);
 
 
-        // getting title bar
+        // makes loading screen in fullscreen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // handler to delay this activity
         new Handler().postDelayed(new Runnable() {
