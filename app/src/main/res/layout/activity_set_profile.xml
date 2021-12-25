@@ -7,15 +7,15 @@
     tools:context=".setProfile">
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="30sp"
-    android:text="Save Your Profile"
-    android:layout_above="@+id/getuserimage"
-    android:layout_marginBottom="30dp"
-    android:textColor="#25d366"
-    android:textStyle="bold"
-    android:layout_centerHorizontal="true" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/getuserimage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="Save Your Profile"
+        android:textColor="#25d366"
+        android:textSize="30sp"
+        android:textStyle="bold">
 
     </TextView>
 
@@ -67,14 +67,13 @@
     </android.widget.Button>
 
     <ProgressBar
+        android:id="@+id/setprofileProgressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/saveprofilebtn"
-        android:id="@+id/setprofileProgressbar"
-        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        >
+        android:visibility="invisible">
 
     </ProgressBar>
 </RelativeLayout>
