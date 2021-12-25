@@ -200,7 +200,7 @@ public class setProfile extends AppCompatActivity {
 
         Bitmap bitmap =null;
 
-        // the images on computer are divided into two types: 1) bitmap images: "images by camer" / 2) vectors images ; images created by graphic designers
+        // the images on computer are divided into two types: 1) bitmap images: "images by camera" / 2) vectors images ; images created by graphic designers
         // so we here create an object from the image that its type bitmap
 
         try {
@@ -221,6 +221,7 @@ public class setProfile extends AppCompatActivity {
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         // the important thing about bytearrayoutputstream it lets you write to multiple files in the same time
+        //https://www.javatpoint.com/java-bytearrayoutputstream-class#:~:text=Java%20ByteArrayOutputStream%20class%20is%20used,forwards%20it%20to%20multiple%20streams.
 
         bitmap.compress(Bitmap.CompressFormat.JPEG, 25 , byteArrayOutputStream);
         byte[] data = byteArrayOutputStream.toByteArray();
