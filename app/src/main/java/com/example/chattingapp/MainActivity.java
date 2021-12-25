@@ -20,6 +20,7 @@ import com.hbb20.CountryCodePicker;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
+    
 
     EditText mgetphonenumber;
     android.widget.Button msendotp;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         mcountrycodepicker=findViewById(R.id.countrycode);
         msendotp=findViewById(R.id.sendbtn);
         mgetphonenumber=findViewById(R.id.phonenumber);
