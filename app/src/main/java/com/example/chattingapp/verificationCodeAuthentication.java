@@ -42,6 +42,9 @@ public class verificationCodeAuthentication extends AppCompatActivity {
 
         firebaseAuth=FirebaseAuth.getInstance();
 
+        // Android Intent is the message that is passed between components such as activities.
+        //It is generally used with startActivity() method to invoke activity, broadcast receivers etc.
+        // when clicked on the re enter your number textview, we go to the main activity
         mchangenumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +52,7 @@ public class verificationCodeAuthentication extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // when click on verify btn
         mverifyotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +64,11 @@ public class verificationCodeAuthentication extends AppCompatActivity {
                 else
                 {
                     mprogressbarofotpauth.setVisibility(View.VISIBLE);
-                    String coderecieved=getIntent().getStringExtra("otp");
+                    // the otp is sent from the main activity, so we take it using the key (otp), put it in a string
+                    String coderecieved = getIntent().getStringExtra("otp");
+
+                    // Wraps phone number and *verification* information for authentication purposes.
+                    // (compares between the otp sent to the user from the main activity and the entered otp)
                     PhoneAuthCredential credential=PhoneAuthProvider.getCredential(coderecieved,enterotp);
                     signInWithPhoneAuthCredential(credential);
                 }
@@ -69,9 +77,11 @@ public class verificationCodeAuthentication extends AppCompatActivity {
     }
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential)
     {
+        // Use this method to sign in a user into your Firebase Authentication system by passing credential (el e3tmad)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                // the task here is the whether the authentication succeeded or not
            if (task.isSuccessful())
            {
                mprogressbarofotpauth.setVisibility(View.INVISIBLE);

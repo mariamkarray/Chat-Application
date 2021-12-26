@@ -90,9 +90,10 @@ public class MainActivity extends AppCompatActivity {
                     mprogressbarofmain.setVisibility(View.VISIBLE);
                     phonenumber=countrycode+number;
 
-                    PhoneAuthOptions options=PhoneAuthOptions.newBuilder()
+
+                    PhoneAuthOptions options=PhoneAuthOptions.newBuilder(firebaseAuth)
                             .setPhoneNumber(phonenumber)
-                            .setTimeout(60L, TimeUnit.SECONDS)
+                            .setTimeout(60L, TimeUnit.SECONDS) // send otp after 60 secs
                             .setActivity(MainActivity.this)
                             .setCallbacks(mcallbacks)
                             .build();
